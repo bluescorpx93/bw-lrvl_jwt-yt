@@ -77,4 +77,12 @@ class AuthController extends Controller
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
+
+  public function payload(){
+    $payload = auth()->payload();
+    $payload->get('sub'); // = 123
+    $payload['jti']; // = 'asfe4fq434asdf'
+    $payload('exp'); // = 123456
+    return $payload;
+  }
 }

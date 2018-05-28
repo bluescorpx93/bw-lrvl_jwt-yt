@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements JWTSubject{
     use Notifiable;
 
+    public function boxes(){
+      return $this->hasMany('App\Box');
+    }
     /**
      * The attributes that are mass assignable.
      *

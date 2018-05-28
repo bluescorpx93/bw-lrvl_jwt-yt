@@ -26,4 +26,16 @@ Route::group([
   Route::post('logout', 'AuthController@logout');
   Route::post('refresh', 'AuthController@refresh');
   Route::post('me', 'AuthController@me');
+  Route::post('payload', 'AuthController@payload');
+});
+
+Route::group([
+  'prefix' => 'box',
+  'middleware' => 'auth:api'
+], function(){
+  Route::get('all', 'BoxController@all');
+  Route::get('myboxes', 'BoxController@index');
+  Route::post('create', 'BoxController@create');
+  Route::patch('edit/{id}', 'BoxController@update');
+  Route::delete('remove/{id}', 'BoxController@remove');
 });
