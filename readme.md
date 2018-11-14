@@ -4,7 +4,7 @@
 
 - Setup Env Vars
 ```sh
-$ cd bw-lrvl_jwt-yt
+$ cd bw-lrvl-jwt-yt
 $ touch .env
 ```
 
@@ -20,7 +20,7 @@ DB_PASSWORD=<YOUR_DBPASS>
 - Run App
 
 ```sh
-$ cd bw-lrvl_jwt-yt
+$ cd bw-lrvl-jwt-yt
 $ composer install 
 $ php artisan serve
 ```
